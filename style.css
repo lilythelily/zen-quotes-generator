@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&family=Tenor+Sans&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000;
+  --white: #dfdfdf;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Barlow", sans-serif;
+  background: var(--black);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+  color: var(--white);
+}
+
+.bg {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background: url("./assets/deep-sea.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+  opacity: 0.4;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  opacity: 0.9;
+  text-shadow: 0.25rem 0.125rem 0.0625rem rgb(8, 11, 20);
+  mix-blend-mode: screen;
+}
+
+.board {
+  z-index: 10;
+  position: absolute;
+  background-image: url(./assets/board.png);
+  width: 25rem;
+  height: 18.75rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+}
+
+@keyframes fish {
+  0% {
+    opacity: 0.1;
+    animation-timing-function: ease;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.1;
+    animation-timing-function: ease;
+  }
+}
+
+#fish1 {
+  position: absolute;
+  z-index: 42;
+  width: 18.75rem;
+  height: auto;
+  left: 10%;
+  animation: fish 10s infinite;
+}
+
+#fish2 {
+  position: absolute;
+  z-index: 42;
+  width: 18.75rem;
+  height: auto;
+  top: 40%;
+  left: 50%;
+  transform: rotate(267deg);
+}
+
+#fish3 {
+  position: absolute;
+  z-index: 42;
+  width: 12.5rem;
+  height: auto;
+  left: 70%;
+  opacity: 0.7;
+  animation: fish 10s infinite;
+  overflow: hidden;
+}
+
+#light {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  overflow: hidden;
+}
+
+#bubble {
+  mix-blend-mode: screen;
+  opacity: 0.4;
+}
+
+.text {
+  font-size: 1.125rem;
+  display: flex;
+  width: 18.75rem;
+  line-height: 1.6;
+  letter-spacing: 0.0688rem;
+  color: var(--white);
+  text-align: center;
+}
+
+small {
+  opacity: 0.8;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 30;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+}
+
+.button {
+  position: absolute;
+  z-index: 50;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+  top: 70%;
+  left: 50%;
+  background-image: url("./assets/btn1.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  width: 8.75rem;
+  height: 8.75rem;
+  cursor: pointer;
+}
+
+.button::before {
+  content: url("./assets/arrow.svg");
+  width: 6.25rem;
+  height: 6.25rem;
+  mix-blend-mode: hard-light;
+}
+
+.button:hover {
+  opacity: 1;
+  animation: btn-rotate 12s infinite;
+}
+
+@keyframes btn-rotate {
+  0% {
+    background-image: url("./assets/btn1.png");
+    animation-timing-function: linear;
+  }
+  10% {
+    background-image: url("./assets/btn2.png");
+    animation-timing-function: linear;
+  }
+  20% {
+    background-image: url("./assets/btn3.png");
+    animation-timing-function: linear;
+  }
+  30% {
+    background-image: url("./assets/btn4.png");
+    animation-timing-function: linear;
+  }
+  40% {
+    background-image: url("./assets/btn5.png");
+    animation-timing-function: linear;
+  }
+  60% {
+    background-image: url("./assets/btn6.png");
+    animation-timing-function: linear;
+  }
+  80% {
+    background-image: url("./assets/btn7.png");
+    animation-timing-function: linear;
+  }
+  100% {
+    background-image: url("./assets/btn8.png");
+    animation-timing-function: ease;
+  }
+}
+
+/* responsive */
+
+@media (max-width: 62.5rem) {
+  #fish1 {
+    left: 4%;
+    width: 15rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  #fish1 {
+    left: 0%;
+    width: 9.375rem;
+  }
+  #fish2 {
+    width: 12.5rem;
+    top: 48%;
+  }
+
+  #fish3 {
+    display: none;
+  }
+
+  #light {
+    max-width: 90%;
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  h1 {
+    font-size: 2rem;
+  }
+  #fish1 {
+    width: 6.25rem;
+  }
+  #fish2 {
+    width: 10rem;
+  }
+  .board {
+    width: 80%;
+  }
+  .text {
+    width: 70vw;
+  }
+}
